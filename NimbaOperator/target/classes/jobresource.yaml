@@ -1,0 +1,11 @@
+apiVersion: example.com/v1
+kind: JobResource
+metadata:
+  name: example-job
+  namespace: default
+spec:
+  image: busybox
+  command:
+    - sh
+    - "-c"
+    - "echo Hello Kubernetes && sleep 10"

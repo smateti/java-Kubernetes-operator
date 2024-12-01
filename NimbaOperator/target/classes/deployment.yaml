@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-operator
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-operator
+  template:
+    metadata:
+      labels:
+        app: java-operator
+    spec:
+      serviceAccountName: operator-sa
+      containers:
+        - name: java-operator
+          image: <your-dockerhub-username>/java-operator:latest
+          imagePullPolicy: Always
