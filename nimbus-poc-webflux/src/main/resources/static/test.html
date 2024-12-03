@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Test</title>
+</head>
+<body>
+    <h1>WebSocket Test</h1>
+    <textarea id="messages" cols="30" rows="10" readonly></textarea><br>
+    <input type="text" id="messageInput" placeholder="Type a message">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        const socket = new WebSocket("ws://localhost:8080/ws/echo");
+        const messages = document.getElementById("messages");
+        const input = document.getElementById("messageInput");
+
+        socket.onopen = () => {
+            messages.value += "WebSocket connection opened.\n";
+        };
+
+        socket.onmessage = (event) => {
+            messages.value += `Server: ${event.data}\n`;
+        };
+
+        socket.onclose = () => {
+            messages.value += "WebSocket connection closed.\n";
+        };
+
+        function sendMessage() {
+            const message = input.value;
+            if (message) {
+                socket.send(message);
+                messages.value += `You: ${message}\n`;
+                input.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
