@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>gov.nystax.nimbus</groupId>
+  <artifactId>nimbus-poc-flink</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<flink.version>1.14.6</flink.version>
+        <scala.binary.version>2.12</scala.binary.version>
+	</properties>
+	<dependencies>
+		
+		
+	
+    <!-- Apache HttpClient -->
+    <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>fluent-hc</artifactId>
+        <version>4.5.14</version>
+    </dependency>
+
+    <!-- Jackson for JSON Parsing -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.15.2</version>
+    </dependency>
+
+		<!-- Spring WebFlux -->
+		<!-- Apache Flink -->
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-streaming-java -->
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-streaming-java -->
+		 <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-streaming-java_2.12</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+
+        <!-- Flink Kafka Connector -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-kafka_2.12</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.36</version>
+        </dependency>
+
+        <!-- Kafka Clients -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+		<!-- Prometheus Metrics -->
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient</artifactId>
+			<version>0.16.0</version>
+		</dependency>
+		
+		<dependency>
+    <groupId>org.apache.flink</groupId>
+    <artifactId>flink-metrics-prometheus</artifactId>
+    <version>1.14.6</version>
+</dependency>
+
+	</dependencies>
+
+</project>
