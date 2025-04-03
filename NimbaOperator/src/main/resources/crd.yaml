@@ -1,0 +1,9 @@
+apiVersion: example.com/v1
+kind: ApplicationImagePatch
+metadata:
+  name: patch-example
+  namespace: default
+spec:
+  deploymentName: my-app-deployment
+  containerName: my-container
+  newImage: myregistry/myapp:new-version

@@ -1,0 +1,4 @@
+mvn clean package
+docker build -t myrepo/java-operator:latest .
+docker push myrepo/java-operator:latest
+kubectl apply -f operator-deployment.yaml
